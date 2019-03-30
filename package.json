@@ -1,0 +1,14 @@
+{
+  "name": "DVL",
+  "version": "1.0.0",
+  "description": "DVL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Rahkill",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
