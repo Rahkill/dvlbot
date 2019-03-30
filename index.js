@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot =  new Discord.Client();
-//const config = require('./config.json');
-//const links = require('./links.json');
+const token = process.env.TOKEN
+const prefix = process.env.PREFIX
 
 
 
@@ -24,20 +24,20 @@ bot.on('ready', () => {
 // comandos de mensagens de usuário
 bot.on('message', async message => {
     let msg = message.content.toLocaleLowerCase();
-    let command = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
+    let command = message.content.slice(prefix.lenght).trim().split(/ +/g);
 
     if (message.author.bot){
         return;
     }
 
-    if (message.content.indexOf(config.prefix) !== 0){
+    if (message.content.indexOf(prefix) !== 0){
         return;
     } 
     
     
 
     switch (command[0].toLocaleLowerCase()) { 
-        case (config.prefix + "convite") :
+        case (prefix + "convite") :
             message.channel.send("**CONVITE DISCORD:**  https://discord.gg/hu2cthf");
             break;            
     }    
@@ -49,4 +49,4 @@ bot.on('message', async message => {
     });
     
     
-bot.login(config.token);
+bot.login(token);
